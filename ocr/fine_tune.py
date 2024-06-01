@@ -13,7 +13,7 @@ from sklearn.metrics import accuracy_score
 from torch.utils.data import DataLoader, Dataset, WeightedRandomSampler
 from tqdm import tqdm
 
-from resnet import ResNet
+from ocr.resnet import ResNet
 
 torch.multiprocessing.set_sharing_strategy("file_system")
 warnings.filterwarnings(category=UserWarning, action="ignore")

@@ -2,7 +2,7 @@ import os
 
 from natsort import natsorted
 
-from ocr_perform import ocr
+from ocr.ocr_perform import ocr
 
 
 def main():

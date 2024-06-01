@@ -3,7 +3,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 
-from resnet import ResNet
+from ocr.resnet import ResNet
 
 
 # Define the ResNet model
@@ -11,7 +11,7 @@ def get_model(num_classes=47):
     ocr_model = ResNet(num_classes=num_classes)
     ocr_model.load_state_dict(
         torch.load(
-            "finetuned_ocr.pth",
+            "model/finetuned_ocr.pth",
             map_location=torch.device("cuda:0" if torch.cuda.is_available() else "cpu"),
         )
     )
