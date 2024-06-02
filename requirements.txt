@@ -1,0 +1,9 @@
+natsort
+torch
+torchvision
+numpy
+pandas
+sklearn
+tqdm
+opencv-python
+pillow
