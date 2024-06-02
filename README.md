@@ -30,7 +30,7 @@ For simple usage, you can just run
 ```
 python3 main.py
 ```
-
+The images are stored in `text_regions`. The trained OCR model is reloaded to perform OCR on car plate images. Preprocessing steps, including adding a border, grayscale conversion, resizing, and normalization, are applied to the input image. The processed image is then fed into the OCR model, which outputs recognized characters and corresponding confidence levels. If the confidence level is below 0.5, it is considered a recognition failure. The final output is the recognized car plate result, including any recognition failures.
 <hr/>
 
 ## License
