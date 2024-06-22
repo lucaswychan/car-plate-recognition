@@ -19,6 +19,8 @@ def get_model(num_classes=47):
 
     return ocr_model
 
+ocr_model = get_model()
+
 
 def preprocess_image(image):
     transform = transforms.Compose(
@@ -63,8 +65,6 @@ def ocr(image_path):
     image = enhance_image(image_path)
     image = Image.fromarray(image)
     image = preprocess_image(image)
-
-    ocr_model = get_model()
 
     with torch.no_grad():
         prediction = ocr_model(image)
