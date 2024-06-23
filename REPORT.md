@@ -2,10 +2,9 @@
 
 In this project, I developed an optical character recognition (OCR) model using PyTorch, The workflow can be summarized as follows:
 
-<center>
-
-![](Image/workflow.png)
-</center>
+<p align="center">
+    <img src="Image/workflow.png">
+</p>
 
 ## Data Preparation
 In my implementation, I divided the project into two stages: model training and transfer learning. Let's explore each stage in more detail:
@@ -14,12 +13,14 @@ In my implementation, I divided the project into two stages: model training and 
 
 In the first stage, I utilized the balanced EMNIST dataset, which is a well-known collection of handwritten character digits and letters. This dataset serves as a standard benchmark for deep learning applications [1]. As the name suggests, the dataset is carefully balanced, ensuring an equal number of samples for each class. This balanced nature allows the model to effectively learn the distinct characteristics of both digits and letters.
 
-<center>
+<p align="center">
+  <img src="Image/custom_image.jpg" alt="Custom Image">
+</p>
 
-![](Image/custom_image.jpg)
+<p align="center">
+  <i>Figure 1. An image of the custom dataset</i>
+</p>
 
-*Figure 1. An image of the custom dataset*
-</center>
 
 **Transfer Learning Stage:**
 
@@ -41,17 +42,20 @@ In this stage, I incorporated transfer learning using the pre-trained ResNet50 m
 |**Batch size**|64|
 |**Epoch**|10|
 
-*Table 1. Stage 1 model parameters settings*
-</center>
+<p align="center">
+  <i>Table 1. Stage 1 model parameters settings</i>
+</p>
 
 
 To prevent overfitting, I implemented regularization techniques and limited the number of training epochs. This helps the model avoid learning unnecessary details from the balanced EMNIST dataset, which may not capture the specific characteristics of car plate characters. By applying regularization and reducing the training epochs, the model can focus on learning essential features and improve its generalization ability.
 
-<center>
+<p align="center">
+  <img src="Image/stage1_graph.png" alt="Stage 1 graph">
+</p>
 
-![](Image/stage1_graph.png)  
-*Figure 2. Accuracy (left) and loss (right) curves in stage 1*
-</center>
+<p align="center">
+  <i>Figure 2. Accuracy (left) and loss (right) curves in stage 1</i>
+</p>  
 
 ## Stage 2: Transfer Learning
 In this stage, we leverage transfer learning to enhance the pre-trained ResNet50 model by utilizing the custom dataset. Transfer learning involves taking advantage of the knowledge acquired from training on a different dataset and applying it to a new task.
@@ -69,18 +73,22 @@ During this transfer learning process, we retain the base architecture of ResNet
 |**Batch size**|16|
 |**Epoch**|200|
 
-*Table 2. Stage 2 model parameters settings*
-</center>
+<p align="center">
+  <i>Table 2. Stage 2 model parameters settings</i>
+</p> 
+
 
 This stage holds great significance as it involves training the model multiple times using the custom dataset, which captures the most meaningful and useful characteristics for the OCR task. To ensure thorough learning, the model is trained for 200 epochs. Interestingly, regularization techniques were found to have a negative impact on performance, so they were omitted from this stage.
 
 Upon completion of training, the model weights are saved, allowing for easy reusability and deployment in future tasks or inference scenarios. Saving the model weights ensures that the trained model can be utilized without the need for retraining, saving time and computational resources.
 
-<center>
+<p align="center">
+  <img src="Image/stage2_graph.png" alt="Stage 2 graph">
+</p>
 
-![](Image/stage2_graph.png)
-*Figure 3. Accuracy (left) and loss (right) curves in stage 2*
-</center>
+<p align="center">
+  <i>Figure 3. Accuracy (left) and loss (right) curves in stage 2</i>
+</p>  
 
 In both stages of the training process, the curves depicting accuracy and loss exhibit a flawless trajectory, characterized by a consistent ascent in accuracy and a corresponding descent in loss. Consequently, we can confidently deduce that the model has indeed assimilated the essential knowledge contained within the dataset.
 
