@@ -1,4 +1,6 @@
-﻿**Optical Character Recognition – Car Plate Recognition**
+<p align="center">
+    <b>Optical Character Recognition - Car Plate Recognition</b>
+</p>
 
 In this project, I developed an optical character recognition (OCR) model using PyTorch, The workflow can be summarized as follows:
 
@@ -24,15 +26,15 @@ In the first stage, I utilized the balanced EMNIST dataset, which is a well-know
 
 **Transfer Learning Stage:**
 
-Moving on to the second stage, I introduced a custom dataset specifically designed to resemble the style of typical car plate digits and letters, as depicted in Figure 1. This dataset consisted of 114 images, and I manually labeled each image to provide the model with the necessary information to recognize the specific character patterns found on car plates. To address the potential issue of class imbalance, I employed the WeightedRandomSampler from PyTorch. This technique helps mitigate the performance degradation that can occur due to imbalanced class distributions. By assigning appropriate weights to each class during the sampling process, we ensure that the model receives sufficient exposure to all classes, regardless of their initial frequency.
+Moving on to the second stage, I introduced a custom dataset specifically designed to resemble the style of typical car plate digits and letters, as depicted in Figure 1. This dataset consisted of 114 images, and I manually labeled each image to provide the model with the necessary information to recognize the specific character patterns found on car plates. To address the potential issue of class imbalance, I employed the `WeightedRandomSampler` from PyTorch. This technique helps mitigate the performance degradation that can occur due to imbalanced class distributions. By assigning appropriate weights to each class during the sampling process, we ensure that the model receives sufficient exposure to all classes, regardless of their initial frequency.
 
 In both stages of data preparation, I incorporated data augmentation techniques to further enhance the model's performance. These techniques, including flipping, cropping, rotation, grayscale conversion, and normalization, aim to increase the diversity of the training data. PyTorch offers a convenient pipeline for implementing various data augmentations, enabling us to create a more robust and generalized model.
 
 ## Stage 1: Model Training
 In this stage, I incorporated transfer learning using the pre-trained ResNet50 model. ResNet50 is a well-known architecture that utilizes residual blocks to handle deep networks effectively [2]. By leveraging a pre-trained model, which has learned diverse image features from tasks like ImageNet classification, we can benefit from its representations and use them as a starting point for our specific task [3]. I trained the ResNet50 model on the balanced EMNIST dataset to further enhance its ability to recognize digits and letters. The model settings are as follows:
 
-<center>
-
+<div align="center">
+    
 |**Dataset**|Balanced EMNIST|
 | :-: | :-: |
 |**Optimizer**|Adam|
@@ -41,6 +43,7 @@ In this stage, I incorporated transfer learning using the pre-trained ResNet50 m
 |**Learning rate**|0\.01|
 |**Batch size**|64|
 |**Epoch**|10|
+</div>
 
 <p align="center">
   <i>Table 1. Stage 1 model parameters settings</i>
@@ -62,7 +65,7 @@ In this stage, we leverage transfer learning to enhance the pre-trained ResNet50
 
 During this transfer learning process, we retain the base architecture of ResNet50 and initialize the model with the weights learned in the previous stage. By doing so, we enable the model to build upon the relevant features learned from the balanced EMNIST dataset while adapting them to the specific characteristics of car plate characters present in the custom dataset. By using the custom dataset, we aim to fine-tune the pre-trained model to better understand and recognize the specific characteristics of car plate digits and letters. The model settings are as follows:
 
-<center>
+<div align="center">
 
 |**Dataset**|Custom Dataset|
 | :-: | :-: |
@@ -72,6 +75,7 @@ During this transfer learning process, we retain the base architecture of ResNet
 |**Learning rate**|0\.001|
 |**Batch size**|16|
 |**Epoch**|200|
+</div>
 
 <p align="center">
   <i>Table 2. Stage 2 model parameters settings</i>
