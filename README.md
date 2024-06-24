@@ -10,7 +10,10 @@
 <hr/>
 
 # Car Plate Recognition
+<div align="center">
+  
 ![output](/Image/image.png)
+</div>
 
 ## Notice
 For the detailed implementation and logic, please visit [REPORT.md](REPORT.md)
