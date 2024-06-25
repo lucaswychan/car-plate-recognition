@@ -38,7 +38,7 @@ python3 main.py
 ```
 The images are stored in `license_images`. The trained OCR model is reloaded to perform OCR on car plate images. Preprocessing steps, including adding a border, grayscale conversion, resizing, and normalization, are applied to the input image. The processed image is then fed into the OCR model, which outputs recognized characters and corresponding confidence levels. If the confidence level is below 0.5, it is considered a recognition failure. The final output is the recognized car plate result, including any recognition failures.
 
-Sample output:
+Sample output (with [image](license_images/GV5679.png)):
 ```
 Recognized license plate: GV5679
 Confidence levels: [0.9433701634407043, 0.7785407304763794, 0.8887794613838196, 0.9682635068893433, 0.8872732520103455, 0.9977583885192871]
