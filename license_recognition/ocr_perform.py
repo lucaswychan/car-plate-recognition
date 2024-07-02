@@ -6,7 +6,7 @@ import torch
 from PIL import Image
 from torchvision import transforms
 
-from ocr.resnet import ResNet
+from license_recognition.resnet import ResNet
 
 
 # Define the ResNet model

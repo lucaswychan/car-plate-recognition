@@ -1,4 +1,4 @@
-from ocr.ocr_perform import ocr
+from license_recognition import ocr
 
 
 def main():
