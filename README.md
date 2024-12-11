@@ -5,8 +5,8 @@
 </div>
 
 
-## Notice
-For the detailed implementation and logic, please visit [REPORT.md](REPORT.md)
+
+> For the detailed implementations and results, please visit [REPORT.md](REPORT.md)
 
 
 ## Abstract
