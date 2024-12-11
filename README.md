@@ -1,9 +1,3 @@
-<div align="center">
-
-[![PyTorch](https://img.shields.io/badge/PyTorch-%23EE4C2C.svg?style=for-the-badge&logo=PyTorch&logoColor=white)](https://pytorch.org/)
-[![OCR](https://img.shields.io/badge/OCR-6600CC?style=for-the-badge)](https://en.wikipedia.org/wiki/Optical_character_recognition)
-</div>
-
 # Car Plate Recognition
 <div align="center">
   
